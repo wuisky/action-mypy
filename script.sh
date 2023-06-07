@@ -59,7 +59,7 @@ mypy_check_output="$(${INPUT_EXECUTE_COMMAND}       \
                           --show-column-numbers     \
                           --show-absolute-path      \
                           ${INPUT_MYPY_FLAGS}       \
-                          "${INPUT_TARGET:-.}" 2>&1 \
+                          ${INPUT_TARGET:-.}  2>&1 \
                           )" || mypy_exit_val="$?"
 
 IGNORE_NOTE_EFM_OPTION=()
