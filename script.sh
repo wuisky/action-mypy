@@ -61,6 +61,7 @@ mypy_check_output="$(${INPUT_EXECUTE_COMMAND}       \
                           ${INPUT_MYPY_FLAGS}       \
                           ${INPUT_TARGET:-.}  2>&1 \
                           )" || mypy_exit_val="$?"
+echo mypy output:${mypy_check_output}
 
 IGNORE_NOTE_EFM_OPTION=()
 if [[ "${INPUT_IGNORE_NOTE}" == "true" ]] ; then
@@ -89,4 +90,3 @@ if [[ "${INPUT_FAIL_ON_ERROR}" == "true"       \
    ]]; then
   exit 1
 fi
-
