@@ -44,6 +44,9 @@ if [[ "${SETUP}" == "true" ]] ; then
   echo '::endgroup::'
 fi
 
+# install types-PyYAML
+pip install types-PyYAML
+
 echo '::group:: Running mypy with reviewdog 🐶 ...'
 mypy_exit_val="0"
 reviewdog_exit_val="0"
