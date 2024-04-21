@@ -64,6 +64,12 @@ mypy_check_output="$(${INPUT_EXECUTE_COMMAND}       \
                           ${INPUT_MYPY_FLAGS}       \
                           ${INPUT_TARGET:-.}  2>&1 \
                           )" || mypy_exit_val="$?"
+full_cmd="${INPUT_EXECUTE_COMMAND}       \
+                          --show-column-numbers     \
+                          --show-absolute-path      \
+                          ${INPUT_MYPY_FLAGS}       \
+                          ${INPUT_TARGET:-.}  2>&1"
+echo full_cmd:${full_cmd}
 echo mypy output:${mypy_check_output}
 
 IGNORE_NOTE_EFM_OPTION=()
